@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import "./StyleCategories.css";
 
@@ -45,14 +46,14 @@ function StyleCategories() {
     <section className="style-categories">
 
       <div className="style-header">
-        <span>DESCUBRE</span>
-        <h2>ENCUENTRA TU ESTILO</h2>
+        <span>EXPLORA</span>
+        <h2>Encuentra tu estilo.</h2>
+        <p>Descubre las marcas que definen tu esencia.</p>
       </div>
 
       <div className="style-slider">
 
         {brands.map((brand) => (
-
           <Link
             key={brand.id}
             to={`/catalogo?brand=${brand.slug}`}
@@ -60,20 +61,19 @@ function StyleCategories() {
           >
 
             <div className="style-image">
-
               <img
                 src={brand.image}
                 alt={brand.name}
+                loading="lazy"
               />
-
             </div>
 
-            <h3>
-              {brand.name}
-            </h3>
+            <div className="style-info">
+              <h3>{brand.name}</h3>
+              <span className="style-arrow">↗</span>
+            </div>
 
           </Link>
-
         ))}
 
       </div>

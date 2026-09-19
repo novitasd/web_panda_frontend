@@ -22,9 +22,9 @@ function Footer() {
         <div className="footer-brand">
 
           <h2>
-            TNIS<span>.pe</span>
+            panda
           </h2>
-
+          
           <p>
             Descubre las mejores zapatillas para cada estilo.
             Inspirados en la cultura sneaker y el streetwear.
@@ -168,7 +168,7 @@ function Footer() {
       <div className="footer-bottom">
 
         <p>
-          © 2026 <strong>TNIS.pe</strong> · Todos los derechos reservados.
+          © 2026 <strong>panda</strong> · Todos los derechos reservados.
         </p>
 
       </div>

@@ -1,40 +1,53 @@
+
 /* ===========================
    ACTIONS
 =========================== */
 
 .nav-icons {
-  width: 700px;
-
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
 
-  gap: 12px;
+  gap: 8px;
 
   flex-shrink: 0;
 }
 
-.nav-icons button {
-  width: 42px;
-  height: 42px;
+/* ===========================
+   BUTTONS
+=========================== */
+
+.nav-icons button,
+.cart-button {
+  width: 38px;
+  height: 38px;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
   border: none;
   background: transparent;
 
-  font-size: 20px;
+  color: #1d1d1f;
+
+  font-size: 19px;
 
   cursor: pointer;
 
-  transition: 0.3s;
+  border-radius: 50%;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.nav-icons button:hover {
-  background: #e6e6e6;
-  transform: translateY(-2px);
+.nav-icons button:hover,
+.cart-button:hover {
+  background: #f2f2f2;
+
+  transform: scale(1.05);
 }
 
 /* ===========================
@@ -44,19 +57,46 @@
 .cart-button {
   position: relative;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: inherit;
   text-decoration: none;
 
-  font-size: 1.3rem;
+  font-size: 20px;
 
   transform-origin: center;
 }
 
-/* REBOTE DEL CARRITO */
+/* ===========================
+   CART COUNT
+=========================== */
+
+.cart-count {
+  position: absolute;
+
+  top: -2px;
+  right: -3px;
+
+  min-width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1px 4px;
+
+  border-radius: 50%;
+
+  background: #1d1d1f;
+  color: #fff;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+/* ===========================
+   CART ANIMATION
+=========================== */
 
 .cart-button.cart-bounce {
   animation: cartBounce 0.5s ease;
@@ -68,11 +108,11 @@
   }
 
   35% {
-    transform: scale(1.25);
+    transform: scale(1.2);
   }
 
   60% {
-    transform: scale(0.92);
+    transform: scale(0.95);
   }
 
   80% {
@@ -85,41 +125,21 @@
 }
 
 /* ===========================
-   CART COUNT
-=========================== */
-
-.cart-count {
-  position: absolute;
-
-  top: -8px;
-  right: -10px;
-
-  min-width: 18px;
-  height: 18px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 2px 5px;
-
-  border-radius: 50%;
-
-  background: #111;
-  color: #fff;
-
-  font-size: 11px;
-  font-weight: 600;
-
-  transition: transform 0.25s ease;
-}
-
-/* ===========================
-   MOBILE SEARCH BUTTON
+   MOBILE SEARCH
 =========================== */
 
 .nav-icons .mobile-search-btn {
   display: none;
+}
+
+/* ===========================
+   FOCUS ACCESSIBILITY
+=========================== */
+
+.nav-icons button:focus-visible,
+.cart-button:focus-visible {
+  outline: 2px solid #1d1d1f;
+  outline-offset: 3px;
 }
 
 /* ===========================
@@ -135,7 +155,7 @@
     align-items: center;
     justify-content: flex-end;
 
-    gap: 10px;
+    gap: 6px;
 
     grid-column: 3;
     grid-row: 1;
@@ -147,29 +167,20 @@
     display: none !important;
   }
 
-  .cart-button {
-    grid-column: 3;
-    grid-row: 1;
-
-    justify-self: end;
-
-    font-size: 1.35rem;
-  }
-
   .nav-icons .mobile-search-btn {
     display: flex;
+  }
 
-    align-items: center;
-    justify-content: center;
+  .nav-icons button,
+  .cart-button {
+    width: 38px;
+    height: 38px;
 
-    width: 42px;
-    height: 42px;
+    font-size: 20px;
+  }
 
-    border: none;
-    background: none;
-
-    font-size: 22px;
-
-    cursor: pointer;
+  .cart-count {
+    top: -2px;
+    right: -3px;
   }
 }

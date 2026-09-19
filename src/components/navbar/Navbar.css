@@ -1,18 +1,22 @@
-.navbar{
+.navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    height:80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+    padding: 0 60px;
+    isolation: isolate;
 
-    padding:0 60px;
+    /* Estilo Apple */
+    background:transparent;
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
 
-    background:#fff;
-    border-bottom:1px solid #ececec;
+    /* Línea negra */
+
 }
 /* Logo */
 

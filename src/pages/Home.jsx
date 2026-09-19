@@ -1,3 +1,9 @@
+
+import {
+    FaInstagram,
+    FaTiktok,
+    FaWhatsapp
+} from "react-icons/fa6";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -6,7 +12,7 @@ import SliderCategorias from "../components/SliderCategorias.jsx";
 import StyleCategories from "../components/StyleCategories.jsx";
 import GallerySection from "../components/GallerySection.jsx";
 
-import videoFondo from "../assets/video/fondoretro.mp4";
+import videoFondo from "../assets/video/pruebapanda.mp4";
 import heroPoster from "../assets/video/heroposter.png";
 
 import "./Home.css";
@@ -25,10 +31,6 @@ function Home() {
 
   return (
     <>
-      {/* ========================================
-          SEO - PÁGINA PRINCIPAL
-      ======================================== */}
-
       <Helmet>
         <title>{homeTitle}</title>
 
@@ -46,8 +48,6 @@ function Home() {
           rel="canonical"
           href={homeUrl}
         />
-
-        {/* Open Graph */}
 
         <meta
           property="og:title"
@@ -84,8 +84,6 @@ function Home() {
           content={heroPoster}
         />
 
-        {/* Twitter */}
-
         <meta
           name="twitter:card"
           content="summary_large_image"
@@ -106,8 +104,6 @@ function Home() {
           content={heroPoster}
         />
 
-        {/* WebSite Schema */}
-
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -120,14 +116,102 @@ function Home() {
       </Helmet>
 
       <main>
-        <div className="fondo">
+        {/* =========================
+            HERO PRINCIPAL
+        ========================= */}
+
+        <section className="hero">
+
+          {/* CONTENIDO */}
+
+        <div className="hero-content">
+
+    <span className="hero-badge">
+        TIO PANDA / SNEAKERS
+    </span>
+
+    <h1>
+        HECHOS PARA
+        <br />
+        TU RITMO.
+    </h1>
+
+    <p>
+        Descubre sneakers que combinan
+        actitud, estilo y personalidad.
+        Encuentra tu próximo par en Perú.
+    </p>
+
+    <div className="hero-buttons">
+
+        <a
+            className="btn-primary"
+            href="https://wa.me/51902824286"
+            target="_blank"
+            rel="noreferrer"
+        >
+            Comprar ahora
+        </a>
+
+        <Link
+            to="/catalogo"
+            className="btn-secondary"
+        >
+            Ver colección
+        </Link>
+
+    </div>
+
+    {/* REDES SOCIALES */}
+
+    <div className="hero-socials">
+
+        <span> SÍGUENOS </span>
+
+        <div className="social-links">
+
+            <a
+                href="https://www.instagram.com/tnisperu/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+            >
+                <FaInstagram />
+            </a>
+
+            <a
+                href="https://www.tiktok.com/@tnisperu"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="TikTok"
+            >
+                <FaTiktok />
+            </a>
+
+            <a
+                href="https://wa.me/51902824286"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+            >
+                <FaWhatsapp />
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+          {/* VIDEO */}
 
           <div className="hero-media">
 
             <img
               src={heroPoster}
               alt="TNIS.PE - Sneakers Jordan, Nike y ASICS"
-              className={`hero-poster ${videoReady ? "hide" : ""}`}
+              className={`hero-poster ${
+                videoReady ? "hide" : ""
+              }`}
             />
 
             <video
@@ -135,13 +219,10 @@ function Home() {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               className="video-fondo"
-              onPlaying={() => {
-                setTimeout(() => {
-                  setVideoReady(true);
-                }, 250);
-              }}
+              poster={heroPoster}
+              onPlaying={() => setVideoReady(true)}
             >
               <source
                 src={videoFondo}
@@ -149,45 +230,15 @@ function Home() {
               />
             </video>
 
-          </div>
-
-          <div className="titulo">
-
-            <span className="badge">
-              @TNISPERU
-            </span>
-
-            <h1>
-              ELEVA TU <br />
-              ESTILO
-            </h1>
-
-            <p>
-              Las mejores zapatillas con acabados premium,
-              envíos a todo el Perú y modelos exclusivos.
-            </p>
-
-            <div className="heroButtons">
-
-              <a
-                className="btnPrimary"
-                href="https://wa.me/51902824286"
-              >
-                Comprar ahora
-              </a>
-
-              <Link
-                to="/catalogo"
-                className="btnSecondary"
-              >
-                Explorar catálogo
-              </Link>
-
-            </div>
+            <div className="video-overlay" />
 
           </div>
 
-        </div>
+        </section>
+
+        {/* =========================
+            RESTO DEL HOME
+        ========================= */}
 
         <StyleCategories />
 

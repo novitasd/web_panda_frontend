@@ -15,15 +15,6 @@ function NavbarActions({
 }) {
   return (
     <>
-      {/* Usuario */}
-      <button
-        type="button"
-        className="user-button"
-        aria-label="Usuario"
-      >
-        <FiUser />
-      </button>
-
       {/* Buscar móvil */}
       <button
         type="button"

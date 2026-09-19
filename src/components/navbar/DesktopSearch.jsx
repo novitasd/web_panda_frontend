@@ -1,3 +1,4 @@
+
 import { FiSearch, FiX } from "react-icons/fi";
 import SearchResults from "./SearchResults";
 
@@ -15,6 +16,10 @@ function DesktopSearch({
   cerrarBusqueda,
   handleKeyDown,
 }) {
+  const abrirBusqueda = () => {
+    setSearchOpen(true);
+  };
+
   return (
     <div
       ref={searchRef}
@@ -22,44 +27,85 @@ function DesktopSearch({
         searchOpen ? "active" : ""
       }`}
     >
+      {/* ICONO DEL NAVBAR */}
       <button
         type="button"
         className="search-icon-btn"
-        onClick={buscarEnCatalogo}
-        aria-label="Buscar"
+        onClick={abrirBusqueda}
+        aria-label="Abrir búsqueda"
       >
         <FiSearch className="search-icon" />
       </button>
 
-      <input
-        type="text"
-        className="search-input"
-        placeholder="Encuentra estilos y marcas"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        onFocus={() => setSearchOpen(true)}
-        onKeyDown={handleKeyDown}
-      />
-
+      {/* PANEL DESPLEGABLE */}
       {searchOpen && (
-        <button
-          type="button"
-          className="search-close"
-          onClick={cerrarBusqueda}
-          aria-label="Cerrar búsqueda"
-        >
-          <FiX />
-        </button>
-      )}
+        <div className="search-panel">
+          <div className="search-panel-inner">
 
-      {searchOpen && search.trim() && (
-        <div className="search-dropdown">
-          <SearchResults
-            loading={loading}
-            results={results}
-            buscarEnCatalogo={buscarEnCatalogo}
-            cerrarBusqueda={cerrarBusqueda}
-          />
+            {/* CABECERA */}
+            <div className="search-panel-header">
+              <div className="search-panel-title">
+                <span>BUSCAR EN PANDA</span>
+                <h2>¿Qué estás buscando?</h2>
+              </div>
+
+              <button
+                type="button"
+                className="search-panel-close"
+                onClick={cerrarBusqueda}
+                aria-label="Cerrar búsqueda"
+              >
+                <FiX />
+              </button>
+            </div>
+
+            {/* CAMPO DE BÚSQUEDA */}
+            <div className="search-field">
+              <FiSearch className="search-field-icon" />
+
+              <input
+                type="text"
+                className="search-input"
+                placeholder="Buscar productos, marcas y estilos..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                onKeyDown={handleKeyDown}
+                autoFocus
+              />
+
+              {search && (
+                <button
+                  type="button"
+                  className="search-clear"
+                  onClick={() => setSearch("")}
+                  aria-label="Limpiar búsqueda"
+                >
+                  <FiX />
+                </button>
+              )}
+            </div>
+
+            {/* RESULTADOS */}
+            {search.trim() && (
+              <div className="search-results-container">
+                <SearchResults
+                  loading={loading}
+                  results={results}
+                  buscarEnCatalogo={buscarEnCatalogo}
+                  cerrarBusqueda={cerrarBusqueda}
+                />
+              </div>
+            )}
+
+            {/* MENSAJE INICIAL */}
+            {!search.trim() && (
+              <div className="search-suggestion">
+                <span>EXPLORA PANDA</span>
+                <p>Busca tus productos favoritos.</p>
+              </div>
+            )}
+
+          </div>
         </div>
       )}
     </div>

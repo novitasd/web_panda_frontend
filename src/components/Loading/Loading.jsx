@@ -1,7 +1,8 @@
 import "./Loading.css";
+import pandaLogo from "../../assets/panda2.png";
+
 
 export default function Loading({
-  text = "Cargando",
   fullScreen = true,
 }) {
   return (
@@ -9,32 +10,19 @@ export default function Loading({
 
       <div className="loading-logo-wrapper">
 
-        {/* Anillo exterior */}
-        <div className="loading-ring loading-ring-outer"></div>
-
-        {/* Anillo interior */}
-        <div className="loading-ring loading-ring-inner"></div>
-
-        {/* Logo */}
-        <div className="loading-logo">
-          <span>TNIS</span>
-        </div>
-
-        {/* Punto de luz */}
-        <div className="loading-orbit-dot"></div>
+        <img
+          src={pandaLogo}
+          alt="Panda"
+          className="loading-logo"
+        />
 
       </div>
 
-      <div className="loading-text">
-        <span>{text}</span>
-
-        <span className="loading-dots">
-          <span>.</span>
-          <span>.</span>
-          <span>.</span>
-        </span>
+      <div className="loading-progress">
+        <div className="loading-progress-bar"></div>
       </div>
 
     </div>
   );
 }
+
