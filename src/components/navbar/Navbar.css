@@ -1,99 +1,225 @@
+
+/* ===============================
+   NAVBAR PRINCIPAL
+================================ */
+
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  width: 100%;
 
-    padding: 0 60px;
-    isolation: isolate;
+  background: rgba(255, 255, 255, 0.88);
 
-    /* Estilo Apple */
-    background:transparent;
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
 
-    /* Línea negra */
-
-}
-/* Logo */
-
-.navbar > :nth-child(2){
-    justify-self:start;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* NavLinks */
+/* CONTENEDOR */
 
-.navbar > :nth-child(3){
-    justify-self:center;
+.navbar-main {
+  width: 100%;
+  max-width: 1440px;
+  min-height: 64px;
+
+  margin: 0 auto;
+  padding: 0 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
 }
 
-/* Iconos */
+/* ===============================
+   LOGO
+================================ */
 
-.nav-icons{
+.navbar-logo {
+  display: flex;
+  align-items: center;
 
-    justify-self:end;
-
-    display:flex;
-    align-items:center;
-
-    gap:18px;
-
+  flex-shrink: 0;
 }
 
-/* ===========================
-   MENU BUTTON
-=========================== */
+/* ===============================
+   NAVEGACIÓN
+================================ */
+
+.navbar-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 1;
+}
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.62);
+
+  backdrop-filter: saturate(200%) blur(28px);
+  -webkit-backdrop-filter: saturate(200%) blur(28px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+
+  box-shadow:
+    0 4px 25px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* ===============================
+   ICONOS
+================================ */
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 18px;
+
+  flex-shrink: 0;
+}
+
+/* ===============================
+   BOTÓN MENÚ
+================================ */
 
 .menu-btn {
-    display: none;
+  display: none;
 
-    width: 42px;
-    height: 42px;
+  width: 40px;
+  height: 40px;
 
-    border: none;
-    background: none;
+  padding: 0;
 
-    font-size: 26px;
+  border: none;
+  background: transparent;
 
-    cursor: pointer;
+  color: #1d1d1f;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 23px;
+
+  cursor: pointer;
+
+  border-radius: 50%;
+
+  transition: background 0.2s ease;
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+.menu-btn:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.menu-btn:active {
+  transform: scale(0.94);
+}
+
+/* ===============================
+   TABLET
+================================ */
+
+@media (max-width: 1024px) {
+
+  .navbar-main {
+    padding: 0 24px;
+    gap: 16px;
+  }
+
+  .nav-icons {
+    gap: 12px;
+  }
+
+}
+
+/* ===============================
+   MÓVIL
+================================ */
 
 @media (max-width: 768px) {
 
-    .navbar {
-        height: auto;
-        min-height: 80px;
+  .navbar {
+    background: rgba(255, 255, 255, 0.96);
+  }
 
-        padding: 15px 18px;
+  .navbar-main {
+    min-height: 64px;
 
-        display: grid;
-        grid-template-columns: 45px 1fr auto;
-        grid-template-rows: auto auto;
+    padding: 10px 16px;
 
-        align-items: center;
+    display: grid;
 
-        gap: 12px 10px;
-    }
+    grid-template-columns: 40px 1fr auto;
 
-    .menu-btn {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
+    align-items: center;
 
-        grid-column: 1;
-        grid-row: 1;
+    gap: 12px;
+  }
 
-        width: 42px;
-        height: 42px;
+  /* MENÚ */
 
-        padding: 0;
-    }
+  .menu-btn {
+    display: flex;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 40px;
+    height: 40px;
+  }
+
+  /* LOGO */
+
+  .navbar-logo {
+    grid-column: 2;
+    grid-row: 1;
+
+    justify-content: center;
+
+    min-width: 0;
+  }
+
+  /* NAVEGACIÓN */
+
+ .navbar-navigation {
+    display: contents;
+}
+
+  /* ACCIONES */
+
+  .nav-icons {
+    grid-column: 3;
+    grid-row: 1;
+
+    gap: 10px;
+  }
+
+}
+
+/* ===============================
+   MÓVILES PEQUEÑOS
+================================ */
+
+@media (max-width: 380px) {
+
+  .navbar-main {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+
+  .menu-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-icons {
+    gap: 6px;
+  }
 
 }

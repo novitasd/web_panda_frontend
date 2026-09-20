@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { FiMenu } from "react-icons/fi";
 
 import Logo from "./Logo";
@@ -15,6 +16,25 @@ import "./Navbar.css";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileSearch, setMobileSearch] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  /* ===============================
+     EFECTO LIQUID GLASS AL SCROLL
+  =============================== */
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const {
     search,
@@ -37,80 +57,88 @@ function Navbar() {
   );
 
   const cerrarTodo = () => {
-  cerrarBusqueda();
-  setMobileSearch(false);
+    cerrarBusqueda();
+    setMobileSearch(false);
   };
 
   return (
-    <header className="navbar">
-      {/* ==========================
-          MENÚ MÓVIL
-      ========================== */}
+    <header
+      className={`navbar ${
+        isScrolled ? "navbar-scrolled" : ""
+      }`}
+    >
+      {/* CONTENEDOR PRINCIPAL */}
 
-      <button
-        type="button"
-        className="menu-btn"
-        onClick={() => setMenuOpen(true)}
-        aria-label="Abrir menú"
-      >
-        <FiMenu />
-      </button>
+      <div className="navbar-main">
 
-      {/* ==========================
-          LOGO
-      ========================== */}
+        {/* MENÚ MÓVIL */}
 
-      <Logo />
+        <button
+          type="button"
+          className="menu-btn"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Abrir menú"
+          aria-expanded={menuOpen}
+        >
+          <FiMenu />
+        </button>
 
-      {/* ==========================
-          NAVEGACIÓN
-      ========================== */}
+        {/* LOGO */}
 
-      <NavLinks
-        menuOpen={menuOpen}
-        setMenuOpen={setMenuOpen}
-      />
+        <div className="navbar-logo">
+          <Logo />
+        </div>
 
-      {/* ==========================
-          ACCIONES
-      ========================== */}
+        {/* NAVEGACIÓN */}
 
-      <div className="nav-icons">
-        <DesktopSearch
-          searchRef={searchRef}
-          searchOpen={searchOpen}
-          setSearchOpen={setSearchOpen}
-          search={search}
-          setSearch={setSearch}
-          loading={loading}
-          results={results}
-          buscarEnCatalogo={buscarEnCatalogo}
-          cerrarBusqueda={cerrarBusqueda}
-          handleKeyDown={handleKeyDown}
-        />
+        <div className="navbar-navigation">
+          <NavLinks
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
+          />
+        </div>
 
-        <NavbarActions
-          totalItems={totalItems}
-          setMobileSearch={setMobileSearch}
-          setSearchOpen={setSearchOpen}
-        />
+        {/* ACCIONES */}
+
+        <div className="nav-icons">
+
+          <DesktopSearch
+            searchRef={searchRef}
+            searchOpen={searchOpen}
+            setSearchOpen={setSearchOpen}
+            search={search}
+            setSearch={setSearch}
+            loading={loading}
+            results={results}
+            buscarEnCatalogo={buscarEnCatalogo}
+            cerrarBusqueda={cerrarBusqueda}
+            handleKeyDown={handleKeyDown}
+          />
+
+          <NavbarActions
+            totalItems={totalItems}
+            setMobileSearch={setMobileSearch}
+            setSearchOpen={setSearchOpen}
+          />
+
+        </div>
+
       </div>
 
-      {/* ==========================
-          BUSCADOR MÓVIL
-      ========================== */}
+      {/* BUSCADOR MÓVIL */}
 
       <MobileSearch
-  mobileSearch={mobileSearch}
-  setMobileSearch={setMobileSearch}
-  search={search}
-  setSearch={setSearch}
-  loading={loading}
-  results={results}
-  handleKeyDown={handleKeyDown}
-  buscarEnCatalogo={buscarEnCatalogo}
-  cerrarBusqueda={cerrarTodo}
-/>
+        mobileSearch={mobileSearch}
+        setMobileSearch={setMobileSearch}
+        search={search}
+        setSearch={setSearch}
+        loading={loading}
+        results={results}
+        handleKeyDown={handleKeyDown}
+        buscarEnCatalogo={buscarEnCatalogo}
+        cerrarBusqueda={cerrarTodo}
+      />
+
     </header>
   );
 }

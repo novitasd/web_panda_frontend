@@ -24,14 +24,12 @@
 /* ===========================
    MOBILE
 =========================== */
-
 @media (max-width: 768px) {
   .logo {
     grid-column: 2;
     grid-row: 1;
 
     width: auto;
-
     max-width: 130px;
 
     justify-content: center;

@@ -127,21 +127,21 @@ function Home() {
         <div className="hero-content">
 
     <span className="hero-badge">
-        TIO PANDA / SNEAKERS
-    </span>
+  PANDA / EVERYDAY SNEAKERS
+</span>
 
-    <h1>
-        HECHOS PARA
-        <br />
-        TU RITMO.
-    </h1>
+<h1>
+  TU ESTILO.
+  <br />
+  TU RITMO.
+</h1>
 
-    <p>
-        Descubre sneakers que combinan
-        actitud, estilo y personalidad.
-        Encuentra tu próximo par en Perú.
-    </p>
-
+<p>
+  Sneakers que hablan de ti.
+  <br />
+  Descubre tu próximo par y lleva
+  tu estilo a otro nivel.
+</p>
     <div className="hero-buttons">
 
         <a
