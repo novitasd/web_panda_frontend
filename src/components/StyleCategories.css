@@ -168,20 +168,21 @@
 
     color: #1d1d1f;
 }
+.style-panda {
+    width: 32px;
+    height: 32px;
 
-.style-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: contain;
 
-    font-size: 1.15rem;
-    font-weight: 400;
-
-    color: #86868b;
+    flex-shrink: 0;
 
     transition:
         transform 0.3s ease,
-        color 0.3s ease;
+        opacity 0.3s ease;
+}
+
+.style-card:hover .style-panda {
+    transform: translateX(4px) rotate(-6deg) scale(1.1);
 }
 
 /* ==================================

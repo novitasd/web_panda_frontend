@@ -3,11 +3,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import "./FAQ.css";
 
 const faqs = [
-  {
-    question: "¿Los productos son originales?",
-    answer:
-      "Sí. Todos nuestros productos son cuidadosamente seleccionados y cumplen con nuestros estándares de calidad.",
-  },
+
   {
     question: "¿Realizan envíos a todo el Perú?",
     answer:

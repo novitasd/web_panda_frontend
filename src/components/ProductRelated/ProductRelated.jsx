@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { getProducts } from "../../services/product.service";
 import "./ProductRelated.css";
 
+import spanpanda from "../../assets/spanpanda.png";
+
 export default function ProductRelated({ product }) {
 
   const sliderRef = useRef(null);
@@ -75,6 +77,7 @@ export default function ProductRelated({ product }) {
 
   }, [product]);
 
+
   // ==========================================
   // MOVER SLIDER
   // ==========================================
@@ -103,6 +106,7 @@ export default function ProductRelated({ product }) {
 
   };
 
+
   // ==========================================
   // HEADER
   // ==========================================
@@ -127,9 +131,12 @@ export default function ProductRelated({ product }) {
 
       </div>
 
+
       {!loading && (
 
         <div className="relatedButtons">
+
+          {/* SE MANTIENE LA FLECHA ← */}
 
           <button
             type="button"
@@ -137,6 +144,9 @@ export default function ProductRelated({ product }) {
           >
             ←
           </button>
+
+
+          {/* SE MANTIENE LA FLECHA → */}
 
           <button
             type="button"
@@ -152,6 +162,7 @@ export default function ProductRelated({ product }) {
     </div>
 
   );
+
 
   // ==========================================
   // LOADING
@@ -175,6 +186,7 @@ export default function ProductRelated({ product }) {
 
   }
 
+
   // ==========================================
   // SIN PRODUCTOS
   // ==========================================
@@ -184,6 +196,7 @@ export default function ProductRelated({ product }) {
     return null;
 
   }
+
 
   // ==========================================
   // COMPONENTE
@@ -197,6 +210,7 @@ export default function ProductRelated({ product }) {
 
         <Header />
 
+
         <div
           className="relatedSlider"
           ref={sliderRef}
@@ -208,6 +222,7 @@ export default function ProductRelated({ product }) {
               producto.images?.length > 0
                 ? producto.images[0].url
                 : "/no-image.png";
+
 
             return (
 
@@ -227,6 +242,7 @@ export default function ProductRelated({ product }) {
 
                 </div>
 
+
                 <div className="relatedInfo">
 
                   <div>
@@ -245,9 +261,15 @@ export default function ProductRelated({ product }) {
 
                   </div>
 
-                  <span className="relatedArrow">
-                    →
-                  </span>
+
+                  {/* PANDA EN LUGAR DE LA FLECHA */}
+
+                  <img
+                    src={spanpanda}
+                    alt=""
+                    className="relatedPanda"
+                    aria-hidden="true"
+                  />
 
                 </div>
 

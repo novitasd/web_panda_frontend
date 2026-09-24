@@ -137,15 +137,34 @@
   }
 
 }
-
 /* ===============================
    MÓVIL
 ================================ */
 
 @media (max-width: 768px) {
 
+  /* ESTADO NORMAL */
   .navbar {
-    background: rgba(255, 255, 255, 0.96);
+    background: rgba(255, 255, 255, 0.88);
+
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  /* CUANDO SE HACE SCROLL */
+  .navbar.navbar-scrolled {
+    background: rgba(255, 255, 255, 0.62);
+
+    backdrop-filter: saturate(200%) blur(28px);
+    -webkit-backdrop-filter: saturate(200%) blur(28px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+
+    box-shadow:
+      0 4px 25px rgba(0, 0, 0, 0.04),
+      inset 0 1px 0 rgba(255, 255, 255, 0.7);
   }
 
   .navbar-main {
@@ -187,9 +206,9 @@
 
   /* NAVEGACIÓN */
 
- .navbar-navigation {
+  .navbar-navigation {
     display: contents;
-}
+  }
 
   /* ACCIONES */
 
@@ -199,8 +218,8 @@
 
     gap: 10px;
   }
-
 }
+
 
 /* ===============================
    MÓVILES PEQUEÑOS

@@ -6,6 +6,7 @@ import {
 } from "react-icons/fa";
 
 import { Link } from "react-router-dom";
+import pandaLogo from "../assets/pandanegra.png";
 
 import "./Footer.css";
 
@@ -19,11 +20,13 @@ function Footer() {
             LOGO Y REDES
         =========================== */}
 
-        <div className="footer-brand">
+          <div className="footer-brand">
 
-          <h2>
-            panda
-          </h2>
+  <img
+    src={pandaLogo}
+    alt="Panda"
+    className="footer-logo"
+  />
           
           <p>
             Descubre las mejores zapatillas para cada estilo.
@@ -34,7 +37,7 @@ function Footer() {
 
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/tnisperu?igsh=Zmc0bGxqejRxMWV4"
+              href="https://www.instagram.com/tiopanda.pe/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -44,7 +47,7 @@ function Footer() {
 
             {/* TikTok */}
             <a
-              href="https://www.tiktok.com/@tnisperu?_r=1&_t=ZS-98mgPVz7n9g"
+              href="https://www.tiktok.com/@panda.peruu?is_from_webapp=1&sender_device=pc"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
@@ -54,7 +57,7 @@ function Footer() {
 
             {/* Facebook */}
             <a
-              href="https://www.facebook.com/share/1EjqWDcwZs/?mibextid=wwXIfr"
+              href="https://www.instagram.com/tiopanda.pe/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -64,7 +67,7 @@ function Footer() {
 
             {/* WhatsApp */}
             <a
-              href="https://wa.me/51902824286"
+              href="https://wa.me/51904130470"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -141,19 +144,19 @@ function Footer() {
           </span>
 
           <a
-            href="https://wa.me/51902824286"
+            href="https://wa.me/51904130470"
             target="_blank"
             rel="noopener noreferrer"
           >
-            +51 902 824 286
+            +51 904 130 470
           </a>
 
           <span>
-            Lun - Sáb
+            Lun - Dom
           </span>
 
           <span>
-            9:00 AM - 7:00 PM
+            9:00 AM - 10:00 PM
           </span>
 
         </div>
@@ -168,7 +171,7 @@ function Footer() {
       <div className="footer-bottom">
 
         <p>
-          © 2026 <strong>panda</strong> · Todos los derechos reservados.
+          © 2026 <strong>Tiopanda</strong> · Todos los derechos reservados.
         </p>
 
       </div>

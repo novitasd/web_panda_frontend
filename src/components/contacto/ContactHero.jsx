@@ -1,6 +1,18 @@
+import { Link } from "react-router-dom";
 import "./ContactHero.css";
-import imgs from "../../assets/categorias/contacto.png"
+
+import imgs from "../../assets/categorias/contacto.png";
+
+// 📱 PON AQUÍ TU NÚMERO DE WHATSAPP
+const WHATSAPP_NUMBER = "51904130470";
+
 function ContactHero() {
+  const whatsappMessage = encodeURIComponent(
+    "Hola Panda, quisiera consultar sobre sus productos."
+  );
+
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
+
   return (
     <section className="contact-hero">
 
@@ -23,13 +35,23 @@ function ContactHero() {
 
         <div className="contact-buttons">
 
-          <button className="btn-primary">
+          {/* WHATSAPP */}
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
             Escríbenos por WhatsApp
-          </button>
+          </a>
 
-          <button className="btn-secondary">
+          {/* CATÁLOGO */}
+          <Link
+            to="/catalogo"
+            className="btn-secondary"
+          >
             Ver catálogo
-          </button>
+          </Link>
 
         </div>
 
@@ -39,7 +61,7 @@ function ContactHero() {
 
         <img
           src={imgs}
-          alt="jordan"
+          alt="Jordan"
         />
 
       </div>

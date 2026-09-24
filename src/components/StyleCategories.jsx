@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import "./StyleCategories.css";
 
@@ -7,6 +6,8 @@ import asics from "../assets/categorias/asisc.png";
 import adidas from "../assets/categorias/adidas.jpg";
 import jordan from "../assets/categorias/jordan.jpg";
 import news from "../assets/categorias/new.jpg";
+
+import spanpanda from "../assets/spanpanda.png";
 
 const brands = [
   {
@@ -45,21 +46,25 @@ function StyleCategories() {
   return (
     <section className="style-categories">
 
+      {/* ENCABEZADO */}
       <div className="style-header">
         <span>EXPLORA</span>
+
         <h2>Encuentra tu estilo.</h2>
-        <p>Descubre las marcas que definen tu esencia.</p>
+
+        <p>
+          Descubre las marcas que definen tu esencia.
+        </p>
       </div>
 
+      {/* TARJETAS DE MARCAS */}
       <div className="style-slider">
-
         {brands.map((brand) => (
           <Link
             key={brand.id}
-            to={`/catalogo?brand=${brand.slug}`}
+            to={`/marca/${brand.slug}`}
             className="style-card"
           >
-
             <div className="style-image">
               <img
                 src={brand.image}
@@ -70,12 +75,16 @@ function StyleCategories() {
 
             <div className="style-info">
               <h3>{brand.name}</h3>
-              <span className="style-arrow">↗</span>
-            </div>
 
+              <img
+                src={spanpanda}
+                alt=""
+                className="style-panda"
+                aria-hidden="true"
+              />
+            </div>
           </Link>
         ))}
-
       </div>
 
     </section>

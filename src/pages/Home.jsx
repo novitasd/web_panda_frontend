@@ -146,7 +146,7 @@ function Home() {
 
         <a
             className="btn-primary"
-            href="https://wa.me/51902824286"
+            href="https://wa.me/51904130470"
             target="_blank"
             rel="noreferrer"
         >
@@ -171,7 +171,7 @@ function Home() {
         <div className="social-links">
 
             <a
-                href="https://www.instagram.com/tnisperu/"
+                href="https://www.instagram.com/tiopanda.pe/"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
@@ -180,7 +180,7 @@ function Home() {
             </a>
 
             <a
-                href="https://www.tiktok.com/@tnisperu"
+                href="https://www.tiktok.com/@panda.peruu?is_from_webapp=1&sender_device=pc"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="TikTok"
@@ -189,7 +189,7 @@ function Home() {
             </a>
 
             <a
-                href="https://wa.me/51902824286"
+                href="https://wa.me/51904130470"
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"

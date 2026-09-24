@@ -543,3 +543,26 @@
     }
 
 }
+
+/* ===========================
+   PANDA PRODUCTO RELACIONADO
+=========================== */
+
+.relatedPanda {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
+    display: block;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.relatedCard:hover .relatedPanda {
+    transform: translateX(4px) rotate(-6deg) scale(1.08);
+}

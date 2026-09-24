@@ -15,7 +15,7 @@ function ProductInfo({
   handleAddToCart,
   addedToCart,
 }) {
-  const WHATSAPP_NUMBER = "51902824286";
+  const WHATSAPP_NUMBER = "51904130470";
 
   // Verificar si el producto tiene una oferta válida
   const hasOffer =

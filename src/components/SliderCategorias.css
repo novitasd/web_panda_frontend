@@ -635,3 +635,64 @@
     }
 
 }
+
+/* ===========================
+   PANDA — CONTROLES SLIDER
+=========================== */
+
+.slider-panda {
+    width: 28px;
+    height: 28px;
+
+    object-fit: contain;
+
+    display: block;
+
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* Panda anterior */
+
+.slider-panda-prev {
+    transform: scaleX(-1);
+}
+
+button:hover .slider-panda-prev {
+    transform: scaleX(-1) translateX(3px);
+}
+
+/* Panda siguiente */
+
+.slider-panda-next {
+    transform: scaleX(1);
+}
+
+button:hover .slider-panda-next {
+    transform: translateX(3px);
+}
+
+
+/* ===========================
+   PANDA — TARJETAS
+=========================== */
+
+.categoriaPanda {
+    width: 30px;
+    height: 30px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
+    display: block;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.destacadoCard:hover .categoriaPanda {
+    transform: translateX(4px) rotate(-6deg) scale(1.08);
+}

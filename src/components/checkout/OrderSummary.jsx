@@ -37,10 +37,10 @@ function OrderSummary({
   const handleWhatsApp = () => {
     if (cart.length === 0) return;
 
-    const phone = "51902824286"
+    const phone = "51904130470"
 
     let message =
-      ` *NUEVO PEDIDO -SAMU.PE*\n\n` +
+      ` *NUEVO PEDIDO -TIO-PANDA*\n\n` +
       `Hola, quiero consultar por los siguientes productos:\n\n`;
 
     cart.forEach((item) => {

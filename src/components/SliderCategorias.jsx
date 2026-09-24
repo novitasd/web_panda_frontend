@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { getProducts } from "../services/product.service";
 import "./SliderCategorias.css";
 
+import spanpanda from "../assets/spanpanda.png";
+
 export default function SliderCategorias() {
 
   const sliderRef = useRef(null);
@@ -158,6 +160,8 @@ export default function SliderCategorias() {
           </div>
 
 
+          {/* FLECHAS DEL SLIDER */}
+
           <div className="botones">
 
             <button
@@ -232,31 +236,30 @@ export default function SliderCategorias() {
                   <div>
 
                     <span className="categoriaLabel">
-
                       {producto.brand?.name}
-
                     </span>
 
 
                     <h3>
-
                       {producto.name}
-
                     </h3>
 
 
                     <span className="destacadoPrecio">
-
                       S/. {producto.offerPrice || producto.price}
-
                     </span>
 
                   </div>
 
 
-                  <span className="categoriaArrow">
-                    →
-                  </span>
+                  {/* PANDA EN LUGAR DE LA FLECHA DE LA TARJETA */}
+
+                  <img
+                    src={spanpanda}
+                    alt=""
+                    className="categoriaPanda"
+                    aria-hidden="true"
+                  />
 
                 </div>
 

@@ -26,7 +26,7 @@ function ContactSection() {
           <FaWhatsapp />
           <div>
             <h4>WhatsApp</h4>
-            <span>+51 902 824 286</span>
+            <span>+51 904 130 470</span>
           </div>
         </div>
 
@@ -42,7 +42,7 @@ function ContactSection() {
           <FaClock />
           <div>
             <h4>Horario</h4>
-            <span>Lun - Sáb | 9:00 AM - 7:00 PM</span>
+            <span>Lun - Dom | 9:00 AM - 10:00 PM</span>
           </div>
         </div>
 
